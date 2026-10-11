@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gistihúsið Lake Hotel Egilsstaðir, by Lagarfljót since 1884</title>
+<meta name="description" content="A family-run hotel on the Egilsstaðir farm by Lagarfljót. Travellers have been given a bed here since 1884, and the oldest part of the house was built in 1903.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1B1E24">
+<link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+<link rel="preload" href="assets/fonts/Oranienbaum.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/AlexBrush-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/InstrumentSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/InstrumentSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/img/hero-aurora@1440.webp" as="image" type="image/webp" media="(min-width: 768px)">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Hotel","name":"Gistihúsið - Lake Hotel Egilsstadir","alternateName":"Gistihúsið Egilsstöðum","description":"A family-run hotel on the Egilsstaðir farm by Lagarfljót. Lodging here since 1884; the oldest part of the house was built in 1903 and 1904.","url":"https://lakehotel.is/","telephone":"+354 471 1114","email":"hotel@gistihusid.is","numberOfRooms":46,"address":{"@type":"PostalAddress","streetAddress":"Egilsstaðir 1","addressLocality":"Egilsstaðir","postalCode":"700","addressCountry":"IS"},"geo":{"@type":"GeoCoordinates","latitude":65.262255,"longitude":-14.414977}}</script>
+<link rel="stylesheet" href="styles.css">
+<script>
+document.documentElement.classList.replace('no-js','js');
+/* Coming back from a room page? The preloader runs once per session, so raise the
+   curtain here and let app.js drop it after first paint, or the page flashes raw. */
+try{ if(sessionStorage.getItem('lakehotel-preloaded')) document.documentElement.classList.add('is-entering'); }catch(e){}
+</script>
+<script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js"}}</script>
+</head>
+<body class="ui-dark has-lockup-hero">
+<a class="skip" href="#about">Skip to content</a>
+
+<!-- ───────── preloader ───────── -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__inner">
+    <span class="preloader__mark crest" aria-hidden="true"></span>
+    <div class="preloader__bar"><span id="preloader-fill"></span></div>
+    <div class="preloader__counter"><b id="preloader-counter">0</b><i>%</i></div>
+  </div>
+</div>
+
+<div class="page-overlay" id="page-overlay"></div>
+
+<!-- ───────── header ───────── -->
+<header class="header ui-dark ui-gradient header--top" id="header">
+  <div class="header__row">
+    <div class="header__left">
+      <button class="btn btn--link header__menu js-menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="header__burger" aria-hidden="true"><i></i><i></i></span>
+        <span class="header__menu-words"><span class="header__menu-word header__menu-word--open">Menu</span><span class="header__menu-word header__menu-word--close">Close</span></span>
+      </button>
+    </div>
+    <a class="header__logo" href="#top" aria-label="Gistihúsið Lake Hotel Egilsstaðir, back to top">
+      <span class="header__logo-text">
+        <span class="header__logo-name wordmark" aria-hidden="true"></span>
+        <span class="header__logo-sub">Lake Hotel Egilsstaðir</span>
+      </span>
+      <span class="header__logo-mark crest" aria-hidden="true"></span>
+    </a>
+    <div class="header__right">
+      <a class="btn btn--underline header__map" href="#locations"><span class="btn__underline">Map</span></a>
+      <a class="btn btn--underline header__book" data-booking href="https://property.godo.is/booking2.php?propid=304801&amp;invoicee=652194&amp;lang=en&amp;referer=lakehotel-web" target="_blank" rel="noopener"><span class="btn__underline">Book a stay</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ───────── menu modal ───────── -->
+<div class="modal modal--menu is-hidden" id="menu" aria-hidden="true">
+  <div class="modal__bg">
+    <img class="modal__img" src="assets/img/house-sunset@1440.webp" alt="" loading="lazy">
+  </div>
+  <div class="modal__scroller js-menu-scroller" data-lenis-prevent>
+    <ol class="menu__list js-menu-list">
+      <li><a class="menu__link js-menu-link" href="#about"><span class="menu__label text-small">Egilsstaðir 1</span><span class="menu__title h1">The farm</span></a></li>
+      <li><a class="menu__link js-menu-link" href="#collection"><span class="menu__label text-small">Four kinds</span><span class="menu__title h1">The rooms</span></a></li>
+      <li><a class="menu__link js-menu-link" href="#expansive"><span class="menu__label text-small">1884 to 2014</span><span class="menu__title h1">The house</span></a></li>
+      <li><a class="menu__link js-menu-link" href="#selection"><span class="menu__label text-small">Twelve prints</span><span class="menu__title h1">The album</span></a></li>
+      <li><a class="menu__link js-menu-link" href="#locations"><span class="menu__label text-small">Four walks</span><span class="menu__title h1">Egilsstaðir</span></a></li>
+      <li><a class="menu__link js-menu-link" href="#the-idea"><span class="menu__label text-small">Since 1997</span><span class="menu__title h1">The family</span></a></li>
+      <li><a class="menu__link js-menu-link" href="#contact"><span class="menu__label text-small">Book direct</span><span class="menu__title h1">Stay</span></a></li>
+    </ol>
+  </div>
+</div>
+
+<div class="c-scrollbar" id="scrollbar" aria-hidden="true"><span class="c-scrollbar__thumb"></span></div>
+
+<main class="page-content" id="page">
+
+<!-- 0 ── HERO ─────────────────────────────────────────── -->
+<section class="section section--top section--full-height ui-dark ui-background-alt" id="top" data-themed="ui-dark ui-gradient ui-intro" data-reveal-root>
+  <div class="sticky sticky--full-height sticky--under-next" data-parallax-pattern="sectionOutTiny">
+    <div class="sticky__layer sticky__layer--sticky intro">
+      <div class="intro__media" data-reveal="zoom-in block">
+        <img class="intro__img" src="assets/img/hero-aurora@1440.webp" srcset="assets/img/hero-aurora@720.webp 720w, assets/img/hero-aurora@1080.webp 1080w, assets/img/hero-aurora@1440.webp 1440w, assets/img/hero-aurora@1920.webp 1920w, assets/img/hero-aurora@2400.webp 2400w, assets/img/hero-aurora@2880.webp 2880w, assets/img/hero-aurora@3840.webp 3840w, assets/img/hero-aurora@4096.webp 4096w" sizes="(max-width: 767px) 350vw, 108vw" alt="Gistihúsið at night under the northern lights" fetchpriority="high">
+      </div>
+      <h1 class="intro__title intro__title--mark" data-reveal-group data-reveal-delay="500">
+        <span class="visually-hidden" translate="no">Gistihúsið, Lake Hotel Egilsstaðir</span>
+        <span class="intro__lockup lockup" data-reveal="fade-in" aria-hidden="true"></span>
+        <span class="intro__sub text-small" data-reveal="text">By Lagarfljót since 1884</span>
+      </h1>
+      <div class="intro__arrow" data-reveal="slide-in-bottom block" data-reveal-delay="1000">
+        <a class="btn btn--gradient btn--arrow-down" href="#about" aria-label="Scroll to the farm"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g-ring-1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#871D27"/><stop offset="1" stop-color="#B45759"/></linearGradient></defs><circle class="btn__ring" cx="20" cy="20" r="19.35" fill="none" stroke="url(#g-ring-1)" stroke-width="1.3"/></svg><span class="btn__arrow" aria-hidden="true"></span></a>
+      </div>
+      <a class="button-3d" href="#locations" data-reveal="fade-in block" data-reveal-delay="1000">
+        <span class="button-3d__media"><img src="assets/img/lake-farm@720.webp" srcset="assets/img/lake-farm@720.webp 720w, assets/img/lake-farm@1080.webp 1080w, assets/img/lake-farm@1440.webp 1440w" sizes="(max-width: 767px) 92vw, 240px" alt="" loading="lazy"></span>
+        <span class="button-3d__text">
+          <span class="button-3d__big">Map</span>
+          <span class="text-small">Four walks from the door</span>
+        </span>
+        <span class="btn btn--square btn--outline-plus" aria-hidden="true"><i></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 1 ── ABOUT / the farm ─────────────────────────────── -->
+<section class="section ui-light l-luxury" id="about" data-themed="ui-light" data-reveal-root>
+  <div class="l-luxury__head" data-reveal-group data-reveal-delay="250" data-parallax-pattern="landingLuxuryTitle" data-parallax-measure=".section">
+    <p class="text-small text-center l-luxury__label" data-reveal="text">Lodging on this farm<br>since 1884</p>
+    <h2 class="h2 text-center" data-reveal="title">AT THE BUSIEST CROSSROADS<br>IN EAST ICELAND</h2>
+  </div>
+
+  <div class="sticky sticky--under-next l-luxury__stage">
+    <div class="sticky__layer sticky__layer--sticky l-luxury__pin">
+      <div class="l-luxury__row js-luxury-wrapper">
+        <figure class="l-luxury__side l-luxury__side--left appear" data-parallax-pattern="landingLuxuryMoveSideDesktop landingLuxuryScaleSideLeftDesktop" data-parallax-measure=".section">
+          <img data-img="lake-sunset" data-w="720 1080 1440 1920 2400 2880 3840 4096" sizes="(max-width: 767px) 501vw, 145vw" alt="Lagarfljót at sunset from the rocks above Egilsstaðir" width="1440" height="960">
+        </figure>
+        <figure class="l-luxury__center appear" data-parallax-pattern="landingLuxuryTitle landingLuxuryScaleCenterDesktop" data-parallax-measure=".section">
+          <img data-img="house-sunset" data-w="720 1080 1440 1920 2400 2880 3840 4800 5280" sizes="(max-width: 767px) 385vw, 125vw" alt="The hotel at sunset, the old house with its red roof and the newer wing" width="1440" height="810">
+        </figure>
+        <figure class="l-luxury__side l-luxury__side--right appear" data-parallax-pattern="landingLuxuryMoveSideDesktop landingLuxuryScaleSideRightDesktop" data-parallax-measure=".section">
+          <img data-img="antique-corner" data-w="720 1080 1440 1920" sizes="(max-width: 767px) 74vw, 27vw" alt="An antique table, a blue chair, books and a wall telephone" width="1440" height="2160">
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- the plate that rides over the pinned trio: it carries its own ground, or the
+       serif statement lands on the photographs -->
+  <div class="l-luxury__flow">
+  <div class="l-luxury-title" data-reveal-group>
+    <p class="h1 l-luxury-title__text" data-reveal="title">IN 1884 THE FARMER AT EGILSSTAÐIR, SHORT OF MONEY, BEGAN CHARGING TRAVELLERS FOR A BED. GUESTS HAVE BEEN TAKEN IN HERE, ALMOST WITHOUT A BREAK, EVER SINCE</p>
+    <p class="text-subtitle l-luxury-title__bottom" data-reveal="subtitle">by Lagarfljót</p>
+  </div>
+
+  <div class="row l-luxury__pair">
+    <figure class="col col--md-6 col--md-offset-3 parallax-image-move appear" data-parallax-pattern="imageMove">
+      <img data-img="toast" data-w="720 1080 1440 1920 2400 2880 3840 4096" sizes="(max-width: 767px) 141vw, 94vw" alt="Two guests at dinner in Eldhúsið" width="1440" height="959">
+    </figure>
+    <figure class="col col--md-3 parallax-image-move appear l-luxury__pair-small" data-parallax-pattern="imageMove">
+      <img data-img="fire" data-w="720 1080 1440 1920 2400 3000" sizes="(max-width: 767px) 145vw, 49vw" alt="The fire in the lobby" width="1440" height="960">
+    </figure>
+  </div>
+  </div>
+</section>
+
+<!-- 2 ── MERIT ─────────────────────────────────────────── -->
+<section class="section section--full-height ui-dark l-merit" id="merit" data-themed="ui-dark" data-reveal-root>
+  <div class="l-merit__bg appear" data-parallax-pattern="backgroundMove" data-parallax-measure=".section">
+    <img data-img="lobby-iron" data-w="720 1080 1440 1920 2400 2880 3840 4096" sizes="(max-width: 767px) 220vw, 120vw" alt="The lobby, the counter clad in red corrugated iron" width="1440" height="960">
+  </div>
+  <div class="l-merit__content" data-reveal-group data-reveal-delay="200" data-parallax-100-0='{"transform":"translateY(20svh)"}' data-parallax-0-100='{"transform":"translateY(-20svh)"}' data-parallax-clamp="true" data-parallax-measure=".section">
+    <h2 class="h2 text-center" data-reveal="title">THE RED IRON CAME<br>OFF THE OLD BARN</h2>
+    <p class="text-small text-center" data-reveal="text">and went into the lobby of the new wing</p>
+  </div>
+</section>
+
+<!-- 3 ── SENSATION ──────────────────────────────────────── -->
+<section class="section section--no-overflow ui-dark ui-background-alt l-sensation" id="sensation" data-themed="ui-dark" data-reveal-root>
+  <div class="l-sensation__bg appear" data-parallax-pattern="landingSensationBackground" data-parallax-measure=".section">
+    <img data-img="twin-lake" data-w="720 1080 1440 1920 2400 2880 3840 4800 5760" sizes="(max-width: 767px) 455vw, 132vw" alt="" width="1440" height="960">
+  </div>
+  <div class="row l-sensation__row">
+    <h2 class="h1 col col--md-5 text-color-primary l-sensation__title" data-reveal="title">AN ANTIQUE ROOM IN THE OLD HOUSE, OR A MODERN ONE IN THE NEW WING</h2>
+  </div>
+  <div class="row l-sensation__row2">
+    <figure class="col col--md-6 col--md-offset-3 parallax-image-move appear" data-parallax-pattern="imageMove">
+      <img data-img="window-tree" data-w="720 1080 1440 1920 2400 2880 3840 4096" sizes="(max-width: 767px) 188vw, 94vw" alt="An open window onto the garden trees" width="1440" height="960">
+    </figure>
+    <p class="col col--md-2 col--md-offset-1 l-sensation__text" data-reveal="text" data-reveal-delay="250">Antiques and a romantic theme in the older part, a contemporary room in the newer one. Wooden floors in both, and some rooms look over Lagarfljót.</p>
+  </div>
+</section>
+
+<!-- 4 ── SUBLIME ───────────────────────────────────────── -->
+<section class="section section--full-height section--top ui-dark l-sublime" id="sublime" data-themed="ui-dark" data-reveal-root>
+  <div class="l-sublime__bg appear" data-parallax-pattern="backgroundMove" data-parallax-measure=".section">
+    <img data-img="single-window" data-w="720 1080 1440 1920 2400 2880 3840 4800 5760" sizes="(max-width: 767px) 391vw, 120vw" alt="" width="1440" height="960">
+  </div>
+  <div class="l-sublime__content" data-reveal-group data-reveal-delay="200">
+    <p class="text-small text-center" data-reveal="text">One thousand and ninety-eight guests<br>have scored the house on Booking.com.<br>Eight point nine overall, and nine point three for</p>
+    <p class="text-subtitle text-center" data-reveal="subtitle">Location</p>
+  </div>
+</section>
+
+<!-- 5 ── COLLECTION / the rooms (WebGL ring) ─────────────── -->
+<section class="section ui-dark ui-background-alt l-three-worlds" id="collection" data-hold data-themed="ui-dark" data-reveal-root>
+  <div class="l-three-worlds__bg appear" data-parallax-pattern="landingThreeWorldsBackground" data-parallax-measure=".section">
+    <img data-img="twin-lake" data-w="720 1080 1440 1920 2400 2880 3840 4800 5760" sizes="(max-width: 767px) 455vw, 132vw" alt="" width="1440" height="960">
+  </div>
+  <div class="row l-three-worlds__intro">
+    <p class="col col--md-4 col--md-offset-4 text-center" data-reveal="text">Eleven room types are sold on the hotel's own booking engine. These are the four kinds, each also sold facing Lagarfljót. Rates as the engine showed them on 10 October, one night from 12 November.</p>
+  </div>
+
+  <div class="sticky sticky--full-height l-three-worlds__stage" id="worlds-stage">
+    <div class="sticky__layer sticky__layer--sticky l-three-worlds-webgl" data-parallax-pattern="landingThreeWorldsWebGl" data-parallax-measure=".sticky">
+      <canvas class="l-three-worlds-webgl__canvas" id="worlds-canvas"></canvas>
+    </div>
+    <div class="sticky__layer sticky__layer--sticky l-three-worlds__ui">
+      <h2 class="l-three-worlds__title" data-reveal-group data-parallax-pattern="landingThreeWorldsTitle" data-parallax-measure=".sticky">
+        <span class="text-subtitle" data-reveal="subtitle">Four kinds of</span>
+        <span class="h0" data-reveal="title">ROOM</span>
+      </h2>
+      <div class="l-three-worlds__bottom">
+        <div class="l-three-worlds__names" id="worlds-names">
+          <span class="h1 l-three-worlds__name is-active" data-href="room-single.html" data-price="ISK 24,100 a night, one guest" data-img="single-lake" data-w="720 1080 1440 1920 2400 2880 3840 4800 5760">SINGLE</span>
+          <span class="h1 l-three-worlds__name" data-href="room-double-twin.html" data-price="ISK 30,100 a night, two guests" data-img="double-lake" data-w="720 1080 1440 1920 2400 2880">DOUBLE OR TWIN</span>
+          <span class="h1 l-three-worlds__name" data-href="room-superior.html" data-price="ISK 40,100 a night, two guests" data-img="superior-lake" data-w="720 1080 1440 1920 2400 2880 3840 4800 5760">SUPERIOR</span>
+          <span class="h1 l-three-worlds__name" data-href="room-deluxe.html" data-price="ISK 50,100 a night, two guests" data-img="deluxe-lounge" data-w="720 1080 1440 1920 2400 3072">DELUXE</span>
+          <p class="l-three-worlds__price text-small" id="worlds-price"><span class="l-three-worlds__price-line is-active">ISK 24,100 a night, one guest</span></p>
+          <a class="l-three-worlds__open text-small" id="worlds-link" href="room-single.html">View the room</a>
+        </div>
+        <div class="l-three-worlds__explore">
+          <span class="progress-ring" id="worlds-ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="59.4" fill="none" stroke="rgba(242,239,220,.15)" stroke-width="1"/><circle class="progress-ring__bar" cx="60" cy="60" r="59.4" fill="none" stroke="#B45759" stroke-width="1" stroke-dasharray="373.25" stroke-dashoffset="373.25"/></svg><span class="progress-ring__count text-small"><b id="worlds-counter">1</b> / 4</span></span>
+          <span class="h3 l-three-worlds__brand" translate="no">GISTIHÚSIÐ</span>
+        </div>
+      </div>
+      <p class="l-three-worlds__hint text-small">Drag to browse<span>Click a room to open it</span></p>
+      <!-- keyboard route to the same four pages the ring opens on click -->
+      <ul class="l-three-worlds__links">
+        <li><a class="l-three-worlds__link" href="room-single.html">Single room</a></li>
+        <li><a class="l-three-worlds__link" href="room-double-twin.html">Double or twin room</a></li>
+        <li><a class="l-three-worlds__link" href="room-superior.html">Superior room</a></li>
+        <li><a class="l-three-worlds__link" href="room-deluxe.html">Deluxe room</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- touch gets a plain, fast picker; the ring above is desktop-only. It carries its
+       own heading, because hiding the ring also hides the ring's title layer. -->
+  <h2 class="l-rooms-mobile__head" data-reveal-group>
+    <span class="text-subtitle" data-reveal="subtitle">Four kinds of</span>
+    <span class="h0" data-reveal="title">ROOM</span>
+  </h2>
+  <ul class="l-rooms-mobile js-rooms-mobile" data-lenis-prevent>
+    <li><a href="room-single.html"><span class="l-rooms-mobile__media appear"><img data-img="single-lake" data-w="720 1080 1440 1920 2400 2880 3840 4800 5760" sizes="(max-width: 767px) 89vw, 78vw" alt="A single room facing the lake, a leather chair by the window" width="1440" height="960"></span><span class="h3">SINGLE</span><span class="text-small">One single bed, 15 m²<span class="l-rooms-mobile__price">ISK 24,100 a night, one guest</span></span></a></li>
+    <li><a href="room-double-twin.html"><span class="l-rooms-mobile__media appear"><img data-img="double-lake" data-w="720 1080 1440 1920 2400 2880" sizes="(max-width: 767px) 89vw, 78vw" alt="A double room facing Lagarfljót" width="1440" height="960"></span><span class="h3">DOUBLE OR TWIN</span><span class="text-small">A double bed or two singles, 20 m²<span class="l-rooms-mobile__price">ISK 30,100 a night, two guests</span></span></a></li>
+    <li><a href="room-superior.html"><span class="l-rooms-mobile__media appear"><img data-img="superior-lake" data-w="720 1080 1440 1920 2400 2880 3840 4800 5760" sizes="(max-width: 767px) 480px, 78vw" alt="A superior room facing the lake" width="1440" height="960"></span><span class="h3">SUPERIOR</span><span class="text-small">A double bed, 30 m²<span class="l-rooms-mobile__price">ISK 40,100 a night, two guests</span></span></a></li>
+    <li><a href="room-deluxe.html"><span class="l-rooms-mobile__media appear"><img data-img="deluxe-lounge" data-w="720 1080 1440 1920 2400 3072" sizes="(max-width: 767px) 480px, 78vw" alt="The sitting corner of a deluxe room" width="1440" height="1920"></span><span class="h3">DELUXE</span><span class="text-small">A double bed, 40 m²<span class="l-rooms-mobile__price">ISK 50,100 a night, two guests</span></span></a></li>
+  </ul>
+  <div class="room-cursor" id="room-cursor" aria-hidden="true">
+    <svg viewBox="0 0 96 96"><circle cx="48" cy="48" r="47" fill="rgba(18,26,29,.35)" stroke="rgba(242,239,220,.6)" stroke-width="1"/></svg>
+    <span class="room-cursor__inner"><b>View</b><span class="room-cursor__room">Single</span></span>
+  </div>
+</section>
+
+<!-- 6 ── TENETS / backdrop ─────────────────────────────── -->
+<section class="section ui-light l-tenets-section" id="tenets" data-themed="ui-dark" data-reveal-root>
+  <div class="sticky sticky--full-height sticky--under-previous sticky--under-next l-tenets">
+    <div class="sticky__layer sticky__layer--sticky l-tenets__pin">
+      <figure class="l-tenets__bg appear" data-parallax-pattern="landingTenetsBackground" data-parallax-measure=".sticky">
+        <img data-img="house-night" data-w="720 1080 1440 1920 2400 2737" sizes="(max-width: 767px) 217vw, 100vw" alt="The house at night under the northern lights" width="1440" height="2160">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 7 ── EXPANSIVE / the house, horizontal ─────────────── -->
+<section class="section ui-light l-expansive-section" id="expansive" data-hold data-themed="ui-light" data-reveal-root
+         data-gravity-well='[{"viewport":0,"element":0}]'>
+  <div class="sticky-slider sticky-slider--full-screen js-sticky-slider">
+    <div class="sticky-slider__sticky">
+      <div class="l-expansive-slider" data-sticky-slider-content>
+
+        <!-- (1) intro slide with the growing card -->
+        <div class="l-expansive-slider__item l-expansive-slider__item--intro">
+          <div class="l-expansive-card js-expansive-card" data-parallax-pattern="landingExpansiveCard landingExpansiveCardScale" data-parallax-measure=".section">
+            <div class="l-expansive-card__inner ui-light">
+              <div class="l-expansive-card__head">
+                <span class="l-expansive-card__logo crest crest--dark" aria-hidden="true"></span>
+                <h2 class="l-expansive-card__title" data-parallax-pattern="landingExpansiveCardText" data-parallax-measure=".section">THE HOUSE</h2>
+              </div>
+              <div class="l-expansive-card__body" data-parallax-pattern="landingExpansiveCardContent" data-parallax-measure=".section">
+                <p class="l-expansive-card__lead">Egilsstaðir 1, on the bank of Lagarfljót.</p>
+                <div class="l-expansive-card__media" data-parallax-pattern="landingExpansiveCardVideo" data-parallax-measure=".section">
+                  <figure class="appear"><img data-img="album-02" data-w="720 1080 1440 1600" sizes="(max-width: 767px) 130vw, 50vw" alt="An old photograph of a family in front of a house, from the house album" width="1440" height="947"></figure>
+                </div>
+                <div class="l-expansive-card__side" data-reveal-group>
+                  <p class="l-expansive-card__subtitle"><span class="text-subtitle-small" data-reveal="subtitle">Since</span><span class="h2" data-reveal="title">1884</span></p>
+                  <p class="l-expansive-card__text" data-reveal="text">Jón Bergsson and Margrét Pétursdóttir bought the farm in 1889. Their descendants live in six houses on the land today, and in 1997 the hotel came back to the family.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- (2) full image -->
+        <div class="l-expansive-slider__item l-expansive-slider__item--full">
+          <figure class="parallax-image-move parallax-image-move--x appear js-hmove"><img data-img="terrace" data-w="720 1080 1440 1920 2400 2880 3840 4096" sizes="(max-width: 767px) 325vw, 94vw" alt="The terrace in autumn" width="1440" height="960"></figure>
+        </div>
+
+        <!-- (3) Built in / CONCRETE -->
+        <div class="l-expansive-slider__item">
+          <div class="row l-expansive-slider__split">
+            <div class="col col--md-4 col--md-offset-2 l-expansive-slider__copy" data-reveal-group data-reveal-distance="0">
+              <h3 class="l-expansive-slider__h"><span class="text-subtitle-small" data-reveal="subtitle">Built in</span><span class="h2" data-reveal="title">CONCRETE</span></h3>
+              <p data-reveal="text">The oldest part of the house went up in 1903 and 1904: two storeys and a basement, among the first houses in Fljótsdalshérað built of concrete. An extension finished in 1920 almost doubled it.</p>
+            </div>
+            <figure class="col col--md-5 parallax-image-move parallax-image-move--x appear js-hmove l-expansive-slider__img-640"><img data-img="album-15" data-w="720 1080 1440 1600" sizes="(max-width: 767px) 96vw, 45vw" alt="An old photograph of a farm across a field, from the house album" width="1440" height="1013"></figure>
+          </div>
+        </div>
+
+        <!-- (4) full image -->
+        <div class="l-expansive-slider__item l-expansive-slider__item--full">
+          <figure class="parallax-image-move parallax-image-move--x appear js-hmove"><img data-img="house-sunset" data-w="720 1080 1440 1920 2400 2880 3840 4800 5280" sizes="(max-width: 767px) 385vw, 125vw" alt="The hotel at sunset, the old house with its red roof and the newer wing" width="1440" height="810"></figure>
+        </div>
+
+        <!-- (5) Through this house / THE FIRST CALL -->
+        <div class="l-expansive-slider__item l-expansive-slider__item--finesse">
+          <div class="row">
+            <div class="col col--md-3 col--md-offset-1 l-expansive-slider__copy" data-reveal-group data-reveal-distance="0">
+              <h3 class="l-expansive-slider__h"><span class="text-subtitle-small" data-reveal="subtitle">Through this house</span><span class="h2" data-reveal="title">THE FIRST CALL</span></h3>
+              <p data-reveal="text">The house also held Jón Bergsson's store, the post office and the telephone exchange, which ran until 1952. Iceland's first long-distance call, over the line from Seyðisfjörður, went through it.</p>
+            </div>
+            <div class="col col--md-7 l-expansive-slider__tiles">
+              <figure class="l-expansive-slider__tile appear parallax-image-move parallax-image-move--x js-hmove"><img data-img="antique-corner" data-w="720 1080 1440 1920" sizes="(max-width: 767px) 74vw, 27vw" alt="An antique table, a blue chair, books and a wall telephone" width="1440" height="2160"></figure>
+              <figure class="l-expansive-slider__tile appear parallax-image-move parallax-image-move--x js-hmove"><img data-img="restaurant-door" data-w="720 1080" sizes="(max-width: 767px) 90vw, 23vw" alt="The restaurant door, a pair of old wooden skis beside it" width="1440" height="2160"></figure>
+              <figure class="l-expansive-slider__tile appear parallax-image-move parallax-image-move--x js-hmove"><img data-img="wall-lamp" data-w="720 1080" sizes="(max-width: 767px) 29vw, 18vw" alt="An old wall lamp over a bed" width="1440" height="2160"></figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- (6) full image -->
+        <div class="l-expansive-slider__item l-expansive-slider__item--full">
+          <figure class="parallax-image-move parallax-image-move--x appear js-hmove"><img data-img="superior-lake-2" data-w="720 1080 1440 1920 2400 2880 3840 4800 5651" sizes="(max-width: 767px) 310vw, 90vw" alt="A superior room facing the lake, two armchairs under the eaves" width="1440" height="1005"></figure>
+        </div>
+
+        <!-- (7) The restaurant / ELDHÚSIÐ -->
+        <div class="l-expansive-slider__item l-expansive-slider__item--amenities">
+          <div class="row">
+            <div class="col col--md-3 col--md-offset-1 l-expansive-slider__copy" data-reveal-group data-reveal-distance="0">
+              <h3 class="l-expansive-slider__h"><span class="text-subtitle-small" data-reveal="subtitle">The restaurant</span><span class="h2" data-reveal="title">ELDHÚSIÐ</span></h3>
+              <p class="h3" data-reveal="text">MOSTLY ICELANDIC, OFTEN FROM THE FARMS NEARBY. THE THREE-COURSE FARM FOOD DIRECT DINNER IS THE KITCHEN'S PRIDE.</p>
+            </div>
+            <figure class="col col--md-4 appear parallax-image-move parallax-image-move--x js-hmove l-expansive-slider__img-600"><img data-img="dinner" data-w="720 1080 1440 1920 2400 3000" sizes="(max-width: 767px) 99vw, 37vw" alt="A plate at Eldhúsið" width="1440" height="960"></figure>
+            <figure class="col col--md-3 appear parallax-image-move parallax-image-move--x js-hmove l-expansive-slider__img-440"><img data-img="restaurant-door" data-w="720 1080" sizes="(max-width: 767px) 90vw, 23vw" alt="The restaurant door, a pair of old wooden skis beside it" width="1440" height="2160"></figure>
+          </div>
+        </div>
+
+        <!-- (8) full image -->
+        <div class="l-expansive-slider__item l-expansive-slider__item--full">
+          <figure class="parallax-image-move parallax-image-move--x appear js-hmove"><img data-img="spa-guests" data-w="720 1080 1440 1920 2400 2880 3840 4096" sizes="(max-width: 767px) 325vw, 94vw" alt="Two guests in the hot pool at Baðhúsið" width="1440" height="960"></figure>
+        </div>
+
+        <!-- (9) On the ground floor / BAÐHÚSIÐ -->
+        <div class="l-expansive-slider__item l-expansive-slider__item--service">
+          <div class="row l-expansive-slider__service">
+            <figure class="l-expansive-slider__svc-side appear parallax-image-move parallax-image-move--x js-hmove"><img data-img="sauna" data-w="720 1080 1440 1920" sizes="(max-width: 767px) 90vw, 22vw" alt="The sauna at Baðhúsið" width="1440" height="2162"></figure>
+            <figure class="l-expansive-slider__svc-center appear parallax-image-move parallax-image-move--x js-hmove"><img data-img="spa-reflection" data-w="720 1080 1440 1920 2400 3000" sizes="(max-width: 767px) 187vw, 58vw" alt="Baðhúsið, the cold tub reflected in the hot pool" width="1440" height="960"></figure>
+            <figure class="l-expansive-slider__svc-side appear parallax-image-move parallax-image-move--x js-hmove"><img data-img="cold-tub" data-w="720 1080 1440 1920 2250" sizes="(max-width: 767px) 90vw, 22vw" alt="The wooden cold tub at Baðhúsið" width="1440" height="1920"></figure>
+            <div class="l-expansive-slider__svc-copy" data-reveal-group data-reveal-distance="0">
+              <h3 class="l-expansive-slider__h"><span class="text-subtitle-small" data-reveal="subtitle">On the ground floor</span><span class="h2" data-reveal="title">BAÐHÚSIÐ</span></h3>
+              <p data-reveal="text">A hot pool at 40°C, a mild sauna at about 65°C and a cold tub at 10°C, with a view over Lagarfljót. Open every day from 10:00 to 22:00. Hotel guests pay ISK 2,000.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- (10) dark slide -->
+        <div class="l-expansive-slider__item l-expansive-slider__item--privacy ui-dark">
+          <figure class="l-expansive-slider__privacy-media appear parallax-image-move parallax-image-move--x js-hmove"><img data-img="restaurant-wall" data-w="720 1080 1440 1920 2400 2880 3840 4096" sizes="(max-width: 767px) 100vw, 119vw" alt="Dinner at Eldhúsið, an old portrait and an old window frame on the wall" width="1440" height="962"></figure>
+          <h3 class="l-expansive-slider__privacy-title" data-reveal-group data-reveal-distance="0"><span class="text-subtitle-small" data-reveal="subtitle">On the restaurant walls</span><span class="h2" data-reveal="title">THE OLD WINDOWS</span></h3>
+        </div>
+
+        <!-- (11) h3 text + 3-image column -->
+        <div class="l-expansive-slider__item l-expansive-slider__item--privacy-text ui-dark">
+          <div class="row">
+            <p class="col col--md-4 col--md-offset-1 h3 l-expansive-slider__privacy-text" data-reveal="text" data-reveal-distance="0">WHEN NEW WINDOWS WENT IN, THE OLD SINGLE-GLAZED ONES WERE KEPT. SOME NOW HANG ON THE RESTAURANT WALLS, BESIDE PHOTOGRAPHS AND PAINTINGS OF THE PLACE AND ITS PEOPLE.</p>
+            <div class="col col--md-5 col--md-offset-1 l-expansive-slider__column" data-parallax-pattern="landingExpansiveCarousel">
+              <figure class="appear"><img data-img="jar" data-w="720 1080 1440 1920" sizes="(max-width: 767px) 80vw, 39vw" alt="A preserving jar at Eldhúsið" width="1440" height="2160"></figure>
+              <figure class="appear"><img data-img="dining-room" data-w="720 1080 1440 1920 2400 2737" sizes="(max-width: 767px) 80vw, 39vw" alt="The dining room of Eldhúsið" width="1440" height="2160"></figure>
+              <figure class="appear"><img data-img="spa-pool" data-w="720 1080 1440 1920 2250" sizes="(max-width: 767px) 480px, 39vw" alt="The hot pool at Baðhúsið, paintings on the wall" width="1440" height="1920"></figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- (12) last slide -->
+        <div class="l-expansive-slider__item l-expansive-slider__item--last ui-dark">
+          <figure class="parallax-image-move parallax-image-move--x appear js-hmove js-hmove-last"><img data-img="house-autumn" data-w="720 1080 1440 1920 2400 2880 3840 4096" sizes="(max-width: 767px) 325vw, 101vw" alt="The hotel through rowan leaves in autumn" width="1440" height="960"></figure>
+          <div class="l-expansive-slider__last-copy" data-reveal-group data-reveal-distance="0">
+            <h3 class="l-expansive-slider__h text-center"><span class="text-subtitle" data-reveal="subtitle">Family-run</span><span class="h1" data-reveal="title">BY LAGARFLJÓT</span></h3>
+            <p class="text-center" data-reveal="text">Egilsstaðir 1, a stone's throw from Route 1 and Egilsstaðir airport. The flight to Reykjavík takes about an hour.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 ── SELECTION / the album (panned and draggable, no WebGL) ───── -->
+<section class="section ui-dark l-selection" id="selection" data-hold data-themed="ui-dark" data-reveal-root
+         data-gravity-well='[{"viewport":0,"element":0}]'>
+  <div class="l-hang" id="hang-stage">
+    <div class="sticky__layer sticky__layer--sticky l-hang__pin">
+      <div class="l-hang__track js-hang-track">
+        <figure class="l-hang__item l-hang__item--tall appear"><img data-img="album-02" data-w="720 1080 1440 1600" sizes="(max-width: 767px) 130vw, 50vw" alt="An old photograph of a family in front of a house, from the house album" width="1440" height="947"></figure>
+        <figure class="l-hang__item appear"><img data-img="album-15" data-w="720 1080 1440 1600" sizes="(max-width: 767px) 96vw, 45vw" alt="An old photograph of a farm across a field, from the house album" width="1440" height="1013"></figure>
+        <figure class="l-hang__item l-hang__item--low appear"><img data-img="album-12" data-w="720 1080" sizes="(max-width: 767px) 480px, 24vw" alt="An old photograph of a child on rocks by water, from the house album" width="1440" height="2063"></figure>
+        <figure class="l-hang__item l-hang__item--tall appear"><img data-img="album-11" data-w="720 1080 1440 1600" sizes="(max-width: 767px) 480px, 44vw" alt="An old photograph of two children on stone steps, from the house album" width="1440" height="963"></figure>
+        <figure class="l-hang__item appear"><img data-img="album-07" data-w="720 1080 1440 1600" sizes="(max-width: 767px) 480px, 29vw" alt="An old photograph of farm buildings by a lake, from the house album" width="1440" height="1003"></figure>
+        <figure class="l-hang__item l-hang__item--low appear"><img data-img="album-03" data-w="720 1080 1440 1600" sizes="(max-width: 767px) 480px, 24vw" alt="An old photograph of two boys in the garden, from the house album" width="1440" height="916"></figure>
+        <figure class="l-hang__item l-hang__item--tall appear"><img data-img="album-14" data-w="720 1080" sizes="(max-width: 767px) 480px, 22vw" alt="An old photograph of a child in a pram by a fence, from the house album" width="1440" height="2100"></figure>
+        <figure class="l-hang__item l-hang__item--low appear"><img data-img="album-06" data-w="720 1080 1440 1600" sizes="(max-width: 767px) 480px, 24vw" alt="An old photograph of tents by the water, from the house album" width="1440" height="937"></figure>
+        <figure class="l-hang__item appear"><img data-img="album-01" data-w="720 1080 1440 1600" sizes="(max-width: 767px) 480px, 27vw" alt="An old photograph of a sitting room with a piano, from the house album" width="1440" height="1075"></figure>
+        <figure class="l-hang__item l-hang__item--tall appear"><img data-img="album-08" data-w="720 1080 1440 1600" sizes="(max-width: 767px) 480px, 42vw" alt="An old photograph of a group seated in a garden, from the house album" width="1440" height="1031"></figure>
+        <figure class="l-hang__item appear"><img data-img="album-16" data-w="720 1080 1440 1600" sizes="(max-width: 767px) 480px, 30vw" alt="An old photograph of a horse and hay by a barn, from the house album" width="1440" height="962"></figure>
+        <figure class="l-hang__item l-hang__item--low appear"><img data-img="album-05" data-w="720 1080 1440 1600" sizes="(max-width: 767px) 480px, 26vw" alt="An old photograph of the lake, from the house album" width="1440" height="864"></figure>
+        <figure class="l-hang__item appear"><img data-img="antique-corner" data-w="720 1080 1440 1920" sizes="(max-width: 767px) 74vw, 27vw" alt="The house today: an antique table, a blue chair, books and a wall telephone" width="1440" height="2160"></figure>
+      </div>
+      <div class="l-hang__rail" aria-hidden="true"><span class="l-hang__rail-fill js-hang-fill"></span></div>
+      <p class="l-hang__count text-small"><b class="js-hang-index">01</b> / <span class="js-hang-total">13</span></p>
+      <p class="l-hang__hint text-small">Drag to turn the pages</p>
+    </div>
+    <div class="sticky__layer sticky__layer--sticky l-selection__title" data-parallax-pattern="landingHandpickedTitle" data-parallax-measure=".l-hang">
+      <div data-reveal-group data-reveal-threshold="1">
+        <p class="text-subtitle text-center" data-reveal="subtitle">The album</p>
+        <p class="text-small text-center" data-reveal="text">from the hotel's own history page</p>
+      </div>
+    </div>
+  </div>
+  <div class="l-selection__flow">
+    <div class="row">
+      <p class="col col--md-4 col--md-offset-2 l-selection__note" data-reveal="text">These twelve old photographs are the ones the family put on the hotel's history page, without captions. The page leaves them unnamed, and so does this one. The last frame is the house today: an antique table, books and a wall telephone.</p>
+    </div>
+    <div class="l-selection__spacer"></div>
+    <div class="row">
+      <p class="col col--md-5 col--md-offset-7 h3 l-selection__statement" data-reveal="title">THE OLD STAIRCASE BECAME THE LOBBY AND THE BAR. the old windows went up on the restaurant walls, <em>and</em> the rowan, poplar and birch that made way for the new wing became the tables you eat at.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9 ── LOCATIONS / Egilsstaðir map ─────────────────────────── -->
+<section class="section ui-dark ui-background-alt l-location" id="locations" data-hold data-themed="ui-dark" data-reveal-root
+         data-gravity-well='[{"viewport":0,"element":0},{"viewport":-490,"element":0},{"viewport":100,"element":100}]'>
+  <div class="l-location__grid">
+    <div class="sticky sticky--full-height l-location__map-layer">
+      <div class="sticky__layer sticky__layer--sticky l-location__map-pin">
+        <div class="l-location__map js-location-map" data-parallax-pattern="landingLocationMapDesktop" data-parallax-measure=".sticky">
+    <div class="l-location__map-inner js-map-inner">
+      <img class="l-location__map-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7680' height='6144'%3E%3C/svg%3E" data-src="assets/img/map-dark.webp" alt="" width="7680" height="6144" decoding="async">
+      <!-- real pedestrian routes from Egilsstaðir 1, OSRM foot profile over OSM (_map.mjs) -->
+      <svg class="l-location__routes js-routes" viewBox="0 0 125 100" preserveAspectRatio="none" aria-hidden="true">
+      <!--ROUTES-->
+      <path class="l-location__route" data-route="0" d="M 23.176 54.833 L 23.176 54.833 L 22.272 54.913 L 21.956 53.604 L 21.941 53.437 L 21.971 53.358 L 21.992 53.303 L 22.106 53.213 L 22.281 53.205 L 23.159 53.412 L 23.616 53.876 L 24.321 54.217 L 25.251 54.663 L 25.379 54.721 L 25.743 54.898 L 26.349 55.170 L 30.608 56.965 L 34.097 58.378 L 34.437 58.585 L 34.203 59.006 L 34.425 59.143 L 34.516 59.198 L 34.605 59.198 L 34.711 59.191 L 35.045 59.082 L 35.141 59.085 L 35.810 59.299 L 36.118 59.372 L 36.530 59.488 L 36.758 59.549 L 38.194 60.064 L 38.234 59.905 L 38.267 59.767 L 38.824 59.868 L 39.449 59.923 L 39.874 59.912 L 39.997 59.847 L 40.057 59.749 L 40.091 59.665 L 40.314 59.651 L 40.484 59.640 L 40.555 59.723 L 40.673 59.789 L 40.810 59.789 L 41.235 59.665 L 42.378 59.227 L 43.202 58.886 L 43.352 58.777 L 43.457 58.614 L 43.727 58.534 L 43.921 58.476 L 44.053 58.317 L 44.411 58.165 L 44.948 57.958 L 45.117 57.092 L 45.616 57.189 L 45.560 57.472 L 46.770 57.730 L 46.823 57.777 L 46.858 57.835 L 46.872 57.893 L 46.867 57.951 L 47.154 58.023 L 47.476 58.157 L 47.928 58.342 L 48.063 58.339 L 48.152 58.310 L 48.251 58.244 L 48.319 58.132 L 48.448 57.556 L 49.049 54.877 L 49.154 54.427 L 49.345 54.463 L 49.439 54.108 L 49.853 52.502 L 50.590 52.440 L 51.405 52.379 L 51.632 52.466 L 51.528 53.089" fill="none"/>
+      <path class="l-location__route" data-route="1" d="M 23.176 54.833 L 23.176 54.833 L 22.272 54.913 L 21.956 53.604 L 21.941 53.437 L 21.971 53.358 L 21.992 53.303 L 22.106 53.213 L 22.281 53.205 L 23.159 53.412 L 23.616 53.876 L 24.321 54.217 L 25.251 54.663 L 25.379 54.721 L 25.743 54.898 L 26.349 55.170 L 30.608 56.965 L 34.097 58.378 L 34.437 58.585 L 34.203 59.006 L 34.425 59.143 L 34.516 59.198 L 34.605 59.198 L 34.711 59.191 L 35.045 59.082 L 35.141 59.085 L 35.810 59.299 L 36.118 59.372 L 36.530 59.488 L 36.597 59.317 L 36.686 59.096 L 36.787 59.104 L 36.905 59.071 L 37.022 59.136 L 37.304 58.690 L 37.668 58.183 L 38.207 57.331 L 38.542 57.400 L 38.631 57.418 L 39.938 57.679 L 40.095 57.711 L 41.219 55.859 L 41.229 55.808 L 41.219 55.758 L 41.195 55.710 L 41.156 55.678 L 41.207 55.493 L 41.565 55.431 L 41.541 55.239 L 41.497 55.051 L 41.436 54.869 L 41.763 54.681 L 41.949 54.413 L 42.316 52.836 L 43.246 48.844 L 43.612 46.955 L 43.735 46.328 L 43.898 46.031 L 44.061 45.933 L 44.175 45.867 L 44.464 45.860 L 44.495 45.755 L 44.868 44.475 L 44.906 44.258 L 44.930 43.493 L 45.252 42.804 L 45.332 42.753 L 45.422 42.717 L 45.517 42.706 L 45.613 42.717 L 45.723 42.757 L 45.771 42.789" fill="none"/>
+      <path class="l-location__route" data-route="2" d="M 23.176 54.833 L 23.176 54.833 L 22.272 54.913 L 21.956 53.604 L 21.941 53.437 L 21.971 53.358 L 21.992 53.303 L 22.106 53.213 L 22.281 53.205 L 23.159 53.412 L 23.616 53.876 L 24.321 54.217 L 25.251 54.663 L 25.379 54.721 L 25.743 54.898 L 26.349 55.170 L 30.608 56.965 L 34.097 58.378 L 34.437 58.585 L 34.203 59.006 L 34.425 59.143 L 34.516 59.198 L 34.605 59.198 L 34.711 59.191 L 35.045 59.082 L 35.141 59.085 L 35.810 59.299 L 36.118 59.372 L 36.530 59.488 L 36.758 59.549 L 38.194 60.064 L 38.234 59.905 L 38.267 59.767 L 38.824 59.868 L 39.449 59.923 L 39.874 59.912 L 39.997 59.847 L 40.057 59.749 L 40.091 59.665 L 40.314 59.651 L 40.484 59.640 L 40.555 59.723 L 40.673 59.789 L 40.810 59.789 L 41.235 59.665 L 42.378 59.227 L 43.202 58.886 L 43.352 58.777 L 43.457 58.614 L 43.727 58.534 L 43.703 58.433 L 43.522 57.664 L 43.519 57.469 L 44.505 53.365 L 45.654 48.065 L 45.805 47.593 L 46.169 47.285 L 46.917 46.857 L 47.228 46.690 L 47.288 46.785 L 48.134 46.306 L 49.986 45.356 L 50.106 45.334 L 50.024 45.197 L 50.514 44.910 L 50.532 44.450 L 50.566 42.931 L 50.590 41.923 L 50.604 41.386 L 50.625 40.719 L 50.722 40.153 L 50.812 39.871 L 50.910 39.606 L 51.079 39.211 L 51.273 38.783 L 51.584 38.192 L 51.736 37.920 L 52.089 38.065 L 52.647 38.188 L 52.682 38.014 L 52.891 37.666 L 52.913 37.579" fill="none"/>
+      <path class="l-location__route" data-route="3" d="M 23.176 54.833 L 23.176 54.833 L 22.272 54.913 L 21.956 53.604 L 21.941 53.437 L 21.971 53.358 L 21.992 53.303 L 22.106 53.213 L 22.281 53.205 L 23.159 53.412 L 23.616 53.876 L 24.321 54.217 L 25.251 54.663 L 25.379 54.721 L 25.743 54.898 L 26.349 55.170 L 30.608 56.965 L 34.097 58.378 L 34.437 58.585 L 34.203 59.006 L 34.425 59.143 L 34.516 59.198 L 34.605 59.198 L 34.711 59.191 L 35.045 59.082 L 35.141 59.085 L 35.810 59.299 L 36.118 59.372 L 36.530 59.488 L 36.758 59.549 L 38.194 60.064 L 38.234 59.905 L 38.267 59.767 L 38.824 59.868 L 39.449 59.923 L 39.874 59.912 L 39.997 59.847 L 40.057 59.749 L 40.091 59.665 L 40.314 59.651 L 40.484 59.640 L 40.555 59.723 L 40.673 59.789 L 40.810 59.789 L 41.235 59.665 L 42.378 59.227 L 43.202 58.886 L 43.352 58.777 L 43.457 58.614 L 43.727 58.534 L 43.921 58.476 L 44.053 58.317 L 44.411 58.165 L 44.948 57.958 L 45.117 57.092 L 45.616 57.189 L 45.560 57.472 L 46.770 57.730 L 46.823 57.777 L 46.858 57.835 L 46.872 57.893 L 46.867 57.951 L 47.154 58.023 L 47.476 58.157 L 47.928 58.342 L 48.063 58.339 L 48.152 58.310 L 48.251 58.244 L 48.319 58.132 L 48.448 57.556 L 49.049 54.877 L 49.154 54.427 L 49.345 54.463 L 49.439 54.108 L 51.787 54.213 L 52.509 54.231 L 54.079 54.340 L 57.141 54.496 L 57.773 54.572 L 58.467 54.674 L 61.194 55.163 L 63.740 55.692 L 63.913 55.736 L 64.294 55.884 L 64.571 55.986 L 65.167 56.443 L 65.613 56.954 L 65.958 57.353 L 66.693 56.667 L 67.320 56.145 L 68.042 55.616 L 69.181 54.826 L 71.970 52.865 L 72.812 52.234 L 73.972 51.204 L 74.681 50.421 L 74.995 50.008 L 75.527 49.101 L 75.735 48.623 L 75.897 48.177 L 76.183 48.282 L 76.266 47.684 L 76.477 47.441 L 76.601 47.332" fill="none"/>
+      <!--/ROUTES-->
+      </svg>
+      <!--HOME--><span class="l-location__home" style="left:18.890%;top:54.887%"><i></i><span class="l-location__home-name"><b>Gistihúsið</b><span>Lake Hotel Egilsstaðir</span></span></span><!--/HOME-->
+      <div class="l-location__labels" aria-hidden="true">
+      <!--LABELS-->
+        <span style="left:7.3%;top:38.4%" class="l-location__landmark l-location__landmark--lagarfljot">Lagarfljót</span>
+        <span style="left:32.8%;top:55.7%" class="l-location__landmark l-location__landmark--egilsstadir">Egilsstaðir</span>
+      <!--/LABELS-->
+      </div>
+      <ul class="l-location__pins js-location-pins" id="pins" data-parallax-pattern="landingLocationMapPinDesktop" data-parallax-measure=".section">
+      <!--PINS-->
+        <li class="l-location__pin is-active" style="left:41.222%;top:53.089%" data-pin="0"><i></i><span class="text-small">Minjasafn Austurlands</span></li>
+        <li class="l-location__pin" style="left:36.616%;top:42.789%" data-pin="1"><i></i><span class="text-small">Egilsstaðakirkja</span></li>
+        <li class="l-location__pin" style="left:42.330%;top:37.579%" data-pin="2"><i></i><span class="text-small">Íþróttamiðstöðin</span></li>
+        <li class="l-location__pin" style="left:61.281%;top:47.332%" data-pin="3"><i></i><span class="text-small">Selskógur</span></li>
+      <!--/PINS-->
+      </ul>
+    </div>
+  </div>
+        <div class="l-location__dim" data-parallax-pattern="landingLocationMapTitleDesktop" data-parallax-measure=".section"></div>
+        <span class="l-location__home-edge" aria-hidden="true"><i></i><span class="l-location__home-name"><b>Gistihúsið</b><span>Lake Hotel Egilsstaðir</span></span></span>
+        <h2 class="l-location__title" data-reveal-group data-parallax-pattern="landingLocationMapTitleDesktop" data-parallax-measure=".section">
+          <span class="text-subtitle" data-reveal="subtitle">From the door</span>
+          <span class="h0" data-reveal="title">ON FOOT</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="l-location__card-layer">
+      <div class="sticky sticky--full-height l-location__card-sticky" style="--location-count:4" id="location-cards">
+        <div class="sticky__layer sticky__layer--sticky l-location__card-pin">
+          <article class="l-location-card card js-location-card">
+            <div class="l-location-card__top">
+              <div class="l-location-card__labels js-loc-labels">
+                <!--CARDLABELS-->
+                <p class="text-small is-active">Minjasafn Austurlands<br><span>1,287 m · 17 min on foot</span></p>
+                <p class="text-small">Egilsstaðakirkja<br><span>1,269 m · 17 min on foot</span></p>
+                <p class="text-small">Íþróttamiðstöðin<br><span>1,631 m · 22 min on foot</span></p>
+                <p class="text-small">Selskógur<br><span>2,158 m · 29 min on foot</span></p>
+              <!--/CARDLABELS-->
+              </div>
+              <span class="text-small l-location-card__count"><b id="loc-counter">1</b> / 4</span>
+            </div>
+            <div class="l-location-card__logo"><span class="crest" aria-hidden="true"></span></div>
+            <div class="l-location-card__texts js-loc-texts">
+              <p class="is-active">The East Iceland Heritage Museum, on Laufskógar.</p>
+              <p>The town church, up on Hörgsás.</p>
+              <p>The sports centre and the town's public outdoor pool.</p>
+              <p>The wood on the edge of town. In winter a cross-country ski track is laid here, and the hotel rents out skis.</p>
+            </div>
+            <div class="l-location-card__line"><i></i><i></i><i></i><span class="l-location-card__progress js-loc-progress" data-parallax-pattern="landingLocationMapProgress" data-parallax-measure=".sticky"></span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- mobile cards -->
+  <ul class="l-location__mobile mobile-scrollable js-mobile-scrollable" data-lenis-prevent aria-hidden="false">
+    <!--MOBILECARDS-->
+    <li class="l-location__mcard"><p class="text-small">Minjasafn Austurlands · 1,287 m</p><p>The East Iceland Heritage Museum, on Laufskógar.</p></li>
+    <li class="l-location__mcard"><p class="text-small">Egilsstaðakirkja · 1,269 m</p><p>The town church, up on Hörgsás.</p></li>
+    <li class="l-location__mcard"><p class="text-small">Íþróttamiðstöðin · 1,631 m</p><p>The sports centre and the town's public outdoor pool.</p></li>
+    <li class="l-location__mcard"><p class="text-small">Selskógur · 2,158 m</p><p>The wood on the edge of town, with a ski track in winter.</p></li>
+  <!--/MOBILECARDS-->
+  </ul>
+  <p class="l-location__attribution text-small">Map data © OpenStreetMap contributors, tiles darkened for this page. Walking routes from the OSRM foot profile, measured on 10 October 2026.</p>
+</section>
+
+<!-- 10 ── NOTES ──────────────────────────────────────────── -->
+<section class="section section--no-overflow-clip ui-light l-journey" id="the-idea" data-hold data-themed="ui-light" data-reveal-root
+         data-gravity-well='[{"viewport":0,"element":0},{"viewport":100,"element":100}]'>
+  <div class="l-journey__bg appear" data-parallax-pattern="landingJourneyBackgroundDesktop" data-parallax-measure=".section">
+    <img data-img="twin-lake-2" data-w="720 1080 1440 1920 2400 2880 3840 4800 5760" sizes="(max-width: 767px) 378vw, 109vw" alt="" width="1440" height="992">
+  </div>
+  <div class="row l-journey__top">
+    <div class="col col--md-5 col--md-offset-1 l-journey__quote" data-reveal-group>
+      <p class="h2 text-color-primary" data-reveal="title">“GUNNLAUGUR, HULDA AND THEIR CHILDREN INVITE YOU TO ENJOY HOSPITALITY AND GOOD ACCOMMODATION IN A BEAUTIFUL ENVIRONMENT BY LAGARFLJÓT AND HOPE YOU LIKE YOUR STAY.”</p>
+      <p class="text-small" data-reveal="text">Gunnlaugur Jónasson and Hulda Elisabeth Daníelsdóttir<br><span>The last line of the hotel's own history page</span></p>
+    </div>
+    <figure class="col col--md-5 col--md-offset-1 parallax-image-move appear l-journey__portrait" data-parallax-pattern="imageMove">
+      <img data-img="entrance" data-w="720 1080 1440 1920" sizes="(max-width: 767px) 65vw, 39vw" alt="The steps up to the entrance of the 2014 wing" width="1440" height="2160">
+    </figure>
+  </div>
+
+  <div class="l-quotes js-quotes" id="quotes" style="--quote-count:3">
+    <div class="l-quotes__sticky js-cursor-target-container">
+      <p class="text-small l-quotes__label">Notes on the house</p>
+      <div class="l-quotes__items js-quote-items">
+        <p class="h3 text-center is-active">GUNNLAUGUR IS THE SON OF MARGRÉT PÉTURSDÓTTIR, A GRANDDAUGHTER OF THE JÓN AND MARGRÉT WHO BOUGHT THE FARM IN 1889.</p>
+        <p class="h3 text-center">SVEINN AND SIGRÍÐUR FANNEY RAN THE GUESTHOUSE FOR HALF A CENTURY FROM 1920. THEIR DAUGHTER ÁSDÍS RAN IT FOR EIGHTEEN YEARS FROM 1970.</p>
+        <p class="h3 text-center">AROUND 1910 SIGRÍÐUR JÓNSDÓTTIR LAID OUT AN ORNAMENTAL GARDEN HERE, A NOVELTY IN THE COUNTRYSIDE. AROUND 1930 SVEINN PLANTED TREES IN THE RUINS OF THE OLD TURF FARMHOUSE.</p>
+      </div>
+      <p class="text-small l-quotes__name">Gistihúsið<br><span>Egilsstaðir 1, 700 Egilsstaðir</span></p>
+      <div class="l-quotes__progress" aria-hidden="true"><span></span></div>
+    </div>
+    <div class="cursor cursor--progress" id="cursor" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="59" fill="none" stroke="rgba(27,30,36,.2)" stroke-width="1"/><circle class="cursor__bar" cx="60" cy="60" r="59" fill="none" stroke="#1B1E24" stroke-width="1" stroke-dasharray="370.7" stroke-dashoffset="247"/></svg><span class="cursor__count text-small"><b id="cursor-counter">1</b> / 3</span></div>
+  </div>
+</section>
+
+<!-- 11 ── STAY ───────────────────────────────────────────── -->
+<section class="section register-section ui-light" id="contact" data-themed="ui-light" data-reveal-root>
+  <div class="register sticky sticky--full-height sticky--under-previous sticky--under-next">
+    <div class="register__spacer"></div>
+    <div class="sticky__layer sticky__layer--sticky register__bg-layer">
+      <figure class="register__bg parallax-image-zoom appear" data-parallax-pattern="registerBgMove registerBgScale" data-parallax-measure=".section">
+        <img data-img="lake-sunset" data-w="720 1080 1440 1920 2400 2880 3840 4096" sizes="(max-width: 767px) 501vw, 145vw" alt="Lagarfljót at sunset from the rocks above Egilsstaðir" width="1440" height="960">
+      </figure>
+    </div>
+    <div class="sticky__layer sticky__layer--top register__screen" data-parallax-pattern="registerScreen" data-parallax-measure=".section">
+      <div class="row">
+        <div class="col col--md-5 col--md-offset-1 register__form-col">
+          <div class="register__form ui-light ui-background" data-reveal-group>
+            <span class="register__logo crest crest--dark" aria-hidden="true"></span>
+            <p class="register__title"><span class="text-subtitle" data-reveal="subtitle">Stay by</span><span class="h2" data-reveal="title">LAGARFLJÓT</span></p>
+            <p class="register__text" data-reveal="text">Forty-six rooms, in the house of 1903 and the wing of 2014. Egilsstaðir 1, 700 Egilsstaðir. +354 471 1114.</p>
+            <div class="register__actions" data-reveal="fade-in slow">
+              <a class="btn btn--primary" data-booking href="https://property.godo.is/booking2.php?propid=304801&amp;invoicee=652194&amp;lang=en&amp;referer=lakehotel-web" target="_blank" rel="noopener">Book a stay</a>
+              <a class="btn btn--underline" href="mailto:hotel@gistihusid.is"><span class="btn__underline">hotel@gistihusid.is</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 ── FOOTER ───────────────────────────────────────────── -->
+<footer class="section section--no-overflow ui-dark footer" id="footer" data-themed="ui-dark" data-reveal-root data-gravity-well='[{"viewport":100,"element":100}]'>
+  <div class="footer__top js-hide-header">
+    <nav class="footer__menu">
+      <a class="btn btn--underline text-small" href="#locations"><span class="btn__underline">Map</span></a>
+      <a class="btn btn--underline text-small" href="tel:+3544711114"><span class="btn__underline">+354 471 1114</span></a>
+    </nav>
+  </div>
+  <div class="footer__headline js-mask-text">
+    <p class="h1 footer__text">EGILSSTAÐIR 1.<br>BY LAGARFLJÓT.<br>GUESTS SINCE 1884.<br>THE HOUSE SINCE 1903.<br>STILL THE FAMILY.</p>
+    <p class="h1 footer__text footer__text--mask" aria-hidden="true">EGILSSTAÐIR 1.<br>BY LAGARFLJÓT.<br>GUESTS SINCE 1884.<br>THE HOUSE SINCE 1903.<br>STILL THE FAMILY.</p>
+  </div>
+  <div class="footer__bottom row">
+    <div class="col col--md-2 col--md-offset-1">
+      <a class="btn btn--gradient btn--arrow-up" href="#top" aria-label="Back to top"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g-ring-2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#871D27"/><stop offset="1" stop-color="#B45759"/></linearGradient></defs><circle class="btn__ring" cx="20" cy="20" r="19.35" fill="none" stroke="url(#g-ring-2)" stroke-width="1.3"/></svg><span class="btn__arrow" aria-hidden="true"></span></a>
+    </div>
+    <p class="col col--md-5 text-small footer__copy">© 2026 Egilsstaðahúsið ehf. Egilsstaðir 1, 700 Egilsstaðir. +354 471 1114</p>
+    <p class="col col--md-3 footer__credit"><a class="sndr" href="https://sndrstudio.is" target="_blank" rel="noopener" aria-label="Hannað af SNDR Studio" data-logotype><span class="sndr__mark">SN<i>✦</i>DR</span><span class="sndr__studio">STUDIO</span></a></p>
+  </div>
+</footer>
+
+</main>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
